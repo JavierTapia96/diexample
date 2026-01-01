@@ -1,6 +1,6 @@
 package guru.springframework.diexample.database;
 
-public class DiDataStore {
+public class DiDataStore implements DataStore {
     private String user;
     private String password;
     private String url;

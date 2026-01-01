@@ -1,25 +1,28 @@
 package guru.springframework.diexample.controller;
 
+import guru.springframework.diexample.database.DataStore;
 import guru.springframework.diexample.database.DiDataStore;
-import guru.springframework.diexample.repository.DiRepo;
+import guru.springframework.diexample.repository.DiRepoImpl;
+import guru.springframework.diexample.repository.Repo;
 import guru.springframework.diexample.service.DiService;
+import guru.springframework.diexample.service.DiServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class DiControllerTest {
 
     private DiController controller;
     private DiService service;
-    private DiRepo repo;
-    private DiDataStore store;
+    private Repo repo;
+    private DataStore store;
 
     @BeforeEach
     void setUp() {
         store = new DiDataStore("jt", "test", "jdbc:mysql://localhost:3306/test");
-        repo = new DiRepo(store);
-        service = new DiService(repo);
+        repo = new DiRepoImpl(store);
+        service = new DiServiceImpl(repo);
         controller = new DiController(service);
     }
 
