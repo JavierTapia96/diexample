@@ -1,7 +1,9 @@
 package guru.springframework.diexample.service;
 
 import guru.springframework.diexample.repository.Repo;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DiServiceImpl implements DiService {
 
     private Repo repo;

@@ -1,7 +1,9 @@
 package guru.springframework.diexample.repository;
 
 import guru.springframework.diexample.database.DataStore;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DiRepoImpl implements Repo {
 
     private DataStore store;
